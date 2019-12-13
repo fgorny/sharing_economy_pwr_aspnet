@@ -1,0 +1,33 @@
+﻿body {
+    padding-top: 56px;
+    background: #1d1f21 !important;
+}
+
+a {
+    color: #ffffff;
+}
+
+    a:hover {
+        color: rgb(172, 172, 172);
+        
+    }
+
+ul.navbar-nav {
+    font-size: 2ch;
+}
+
+div.container {
+    color: rgb(172, 172, 172)
+}
+
+nav.navbar {
+    background-color: #121212;
+}
+
+footer {
+    background-color: #121212;
+}
+
+a.list-group-item {
+    background-color: red;
+}
