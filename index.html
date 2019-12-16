@@ -31,10 +31,12 @@
         <h2>Wszystkie produkty</h2>
         <ul id="products" />
     </div>
+
     <div class="container">
-        <h2>Szukaj według ID</h2>
-        <input type="text" id="prodId" size="5" />
-        <input type="button" value="Szukaj" onclick="find();" />
+        <h2>Wpisz numer produktu, którego potrzebujesz</h2>
+        <span style="color: red">Możesz wybrać tylko jeden produkt!</span>
+        <input type="text" id="prodId" size="15" />
+        <input type="button" value="Zarezerwuj" onclick="find();" />
         <p id="product" />
     </div>
 
@@ -55,19 +57,25 @@
         });
 
         function formatItem(item) {
-            return item.Name + ': ' + item.Price + 'zł';
+            return item.Id +'. ' + item.Name + ': ' + item.Price + 'zł';
         }
+
+      
 
         function find() {
             var id = $('#prodId').val();
             $.getJSON(uri + '/' + id)
                 .done(function (data) {
-                    $('#product').text(formatItem(data));
+                    $('#product').text(formatItem(data) + " -> zarezerwowano"); 
+                    
                 })
                 .fail(function (jqXHR, textStatus, err) {
-                    $('#product').text('Error: ' + err);
+                    var err = 'nie znaleziono produktu!';
+                    $('#product').text('Błąd: ' + err);
                 });
         }
+
+        
     </script>
 
     <footer class="py-4">
