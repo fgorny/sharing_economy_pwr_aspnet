@@ -20,17 +20,36 @@
             $("#header").load("header.html");
         });
     </script>
+
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $("#includedContent").load("popup.html");
+        });
+    </script>
+
 </head>
 <body>
 
+
+    <div id="includedContent"></div>
+
     <div id="header"></div>
-    
+
 
     <div class="container">
         <br />
         <h2>Wszystkie produkty</h2>
         <ul id="products" />
     </div>
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+>>>>>>> Stashed changes
     <div class="container">
         <h2>Szukaj według ID</h2>
         <input type="text" id="prodId" size="5" />
@@ -55,19 +74,37 @@
         });
 
         function formatItem(item) {
+<<<<<<< Updated upstream
             return item.Name + ': ' + item.Price + 'zł';
         }
 
+=======
+            return item.Id + '. ' + item.Name + ': ' + item.Price + 'zł';
+        }
+
+
+
+>>>>>>> Stashed changes
         function find() {
             var id = $('#prodId').val();
             $.getJSON(uri + '/' + id)
                 .done(function (data) {
+<<<<<<< Updated upstream
                     $('#product').text(formatItem(data));
+=======
+                    $('#product').text(formatItem(data) + " -> zadzwoń i zarezerwuj: + 48 123 456 789");
+
+>>>>>>> Stashed changes
                 })
                 .fail(function (jqXHR, textStatus, err) {
                     $('#product').text('Error: ' + err);
                 });
         }
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     </script>
 
     <footer class="py-4">

@@ -28,6 +28,7 @@ footer {
     background-color: #121212;
 }
 
-a.list-group-item {
-    background-color: red;
+nav-link active {
+    background-color: #7d9801;
+    border: #7d9801;
 }
